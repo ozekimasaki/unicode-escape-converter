@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicode変換ツール</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Unicode 変換ツール</h1>
+    <p class="subtitle">文字列とUnicodeエスケープの相互変換</p>
+    
+    <div class="toggle-container">
+      <button id="toUnicodeBtn" class="toggle-btn active">
+        文字 → \uXXXX
+      </button>
+      <button id="toStringBtn" class="toggle-btn">
+        \uXXXX → 文字
+      </button>
+    </div>
+    
+    <div class="input-container">
+      <label for="inputText">変換前</label>
+      <textarea id="inputText" placeholder="ここにテキストを入力..."></textarea>
+    </div>
+    
+    <div class="button-container">
+      <button id="convertBtn" class="btn convert-btn">変換する</button>
+      <button id="clearBtn" class="btn clear-btn">クリア</button>
+    </div>
+    
+    <div class="output-container">
+      <label for="outputText">変換後</label>
+      <textarea id="outputText" readonly placeholder="変換結果がここに表示されます"></textarea>
+    </div>
+    
+    <div class="button-container single">
+      <button id="copyBtn" class="btn copy-btn">クリップボードにコピー</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

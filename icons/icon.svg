@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background - Warm off-white (ivory) -->
+  <rect width="128" height="128" rx="16" ry="16" fill="#F8F6F3"/>
+  
+  <!-- Hairline border -->
+  <rect x="1" y="1" width="126" height="126" rx="15" ry="15" fill="none" stroke="#E8E4DF" stroke-width="0.5"/>
+  
+  <!-- U character - Soft dark gray, elegant serif -->
+  <text x="64" y="82" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="400" fill="#2D2D2D" text-anchor="middle" letter-spacing="-2">U</text>
+  
+  <!-- Minimal hairline accent -->
+  <line x1="32" y1="100" x2="96" y2="100" stroke="#C4C0BA" stroke-width="0.5"/>
+  
+  <!-- Subtle escape indicator -->
+  <text x="30" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="300" fill="#9A9590">\</text>
+</svg>
