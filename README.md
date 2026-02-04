@@ -103,7 +103,7 @@ unicode-escape-converter/
 
 ## 🤝 貢献
 
-バグ報告や機能要望は[GitHub Issues](../../issues)へお願いいたします。
+バグ報告や機能要望は[GitHub Issues](https://github.com/ozekimasaki/unicode-escape-converter/issues)へお願いいたします。
 
 ## 📄 ライセンス
 
@@ -111,7 +111,7 @@ MIT License - 詳しくは[LICENSE](LICENSE)ファイルをご覧ください。
 
 ## 📝 お問い合わせ
 
-- GitHub Issues: [リポジトリのIssuesページ](../../issues)
+- GitHub Issues: [リポジトリのIssuesページ](https://github.com/ozekimasaki/unicode-escape-converter/issues)
 - Chromeウェブストアの開発者向け連絡フォーム
 
 ---

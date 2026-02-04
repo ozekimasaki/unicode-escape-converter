@@ -21,7 +21,7 @@
 
 プライバシーポリシーのURL:
 ```
-https://[GitHubユーザー名].github.io/unicode-escape-converter/privacy-policy.html
+https://ozekimasaki.github.io/unicode-escape-converter/privacy-policy.html
 ```
 
 このURLをChromeウェブストアの「プライバシー実務」欄に入力します。
@@ -66,7 +66,7 @@ https://[GitHubユーザー名].github.io/unicode-escape-converter/privacy-polic
 
 #### 3. プライバシー実務
 - **プライバシーポリシー**:
-  - プライバシーポリシーURL: `https://[ユーザー名].github.io/unicode-escape-converter/privacy-policy.html`
+  - プライバシーポリシーURL: `https://ozekimasaki.github.io/unicode-escape-converter/privacy-policy.html`
   - データ収集: なし
 
 #### 4. 販売/配布
