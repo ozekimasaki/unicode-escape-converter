@@ -14,16 +14,23 @@ Unicodeエスケープシーケンスと通常テキストの相互変換を行�
 - ✅ **文字 → Unicode変換** - 日本語や特殊文字をUnicodeエスケープシーケンスに変換
 - ✅ **Unicode → 文字変換** - Unicodeエスケープシーケンスを通常のテキストに戻す
 - ✅ **改行の維持** - 複数行のテキストでも改行を維持したまま変換
+- ✅ **サロゲートペア対応** - 絵文字などのBMP外文字も正しく変換（例: `😀` → `\ud83d\ude00`）
 - ✅ **ワンクリックコピー** - 変換結果をクリップボードに簡単コピー
 - ✅ **プライバシー重視** - 完全オフライン動作、データ収集なし、権限不要
+
+## ✅ 動作要件
+
+- Manifest V3 に対応した Chromium 系ブラウザ（Google Chrome など）
+- ビルドツールやランタイム（Node.js 等）は不要。プレーンな HTML / CSS / JavaScript のみで動作します
 
 ## 🔧 使い方
 
 1. Chromeのツールバーから拡張機能のアイコンをクリック
-2. 変換方向を選択（文字→Unicode または Unicode→文字）
+2. 変換方向を選択（`文字 → \uXXXX` または `\uXXXX → 文字`）
 3. テキストエリアに変換したいテキストを入力
-4. 「変換する」ボタンをクリック
+4. 「変換する」ボタンをクリック（`Ctrl + Enter` でも変換できます）
 5. 「クリップボードにコピー」で結果をコピー
+6. 「クリア」ボタンで入力・出力を消去
 
 ## 💡 変換例
 
@@ -79,19 +86,33 @@ Unicodeエスケープシーケンスと通常テキストの相互変換を行�
 ### ファイル構成
 ```
 unicode-escape-converter/
-├── manifest.json       # 拡張機能設定
-├── popup.html         # UI
-├── popup.css          # スタイル
-├── popup.js           # 変換ロジック
-├── icons/             # アイコン画像
-│   ├── icon.svg       # SVGソース
+├── manifest.json              # 拡張機能設定（Manifest V3）
+├── popup.html                 # ポップアップUI
+├── popup.css                  # スタイル
+├── popup.js                   # 変換ロジック
+├── icons/                     # アイコン画像
+│   ├── icon.svg               # SVGソース
 │   ├── icon16.png
 │   ├── icon32.png
 │   ├── icon48.png
 │   └── icon128.png
-├── privacy-policy.html    # プライバシーポリシー
-└── README.md          # このファイル
+├── privacy-policy.html        # プライバシーポリシー（HTML版）
+├── privacy-policy.md          # プライバシーポリシー（Markdown版）
+├── DEPLOYMENT_GUIDE.md        # Chromeウェブストア公開手順
+├── chrome-store-submission.md # ストア提出用の説明文素材
+├── create-store-zip.bat       # 提出用ZIP作成スクリプト（Windows）
+├── LICENSE                    # MITライセンス
+└── README.md                  # このファイル
 ```
+
+> 拡張機能本体として読み込まれるのは `manifest.json` / `popup.html` / `popup.css` / `popup.js` / `icons/` です。その他のファイルはドキュメントおよびストア提出用の補助ファイルです。
+
+### 開発コマンド
+
+このプロジェクトはビルド・テスト・lint の仕組みを持たないプレーンな拡張機能です。開発時に使う操作は以下のとおりです。
+
+- **読み込み / 動作確認**: `chrome://extensions` で「デベロッパーモード」を有効化し、「パッケージ化されていない拡張機能を読み込む」からこのフォルダを選択（コード変更後は拡張機能カードの再読み込みボタンで反映）
+- **提出用ZIP作成（Windows）**: プロジェクトルートで `create-store-zip.bat` を実行し、プロンプトにバージョン番号を入力すると `unicode-escape-converter-<version>.zip` が生成されます
 
 ### テクニカル仕様
 - **Manifest V3**: Chrome拡張機能の最新規格に準拠
